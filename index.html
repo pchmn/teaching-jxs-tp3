@@ -15,8 +15,25 @@
 		<!-- Search -->
 		<div ng-controller="PokemonList">
 
- 	        <p>Numéro du pokémon : <input type="text" ng-model="id"></p>
-            <p>{{ id }}</p>
+            <input type="text" ng-model="test">
+
+            <select ng-model="id">
+                <option ng-repeat="x in names | filter : test">{{ x }}</option>
+            </select>
+
+            <button type="button" class="btn btn-primary" ng-click="go(id)">Go</button>
+
+            <p>Vous avez choisi : {{ id }}</p>
+
+<!--            <ul>
+                <li ng-repeat="x in names | filter: test"> {{ x }}</li>
+            </ul>-->
+            <p>Info pokemon</p>
+            <ul>
+                <li ng-repeat="(key, val) in info">
+                    {{ key }} : {{ val }}
+                </li>
+            </ul>
 
         </div>
 

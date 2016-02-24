@@ -9,25 +9,18 @@ var pokeApiUrl = "http://pokeapi.co/";
 pokeApp.factory('DetailFact', function($resource) {
 	var factory = {};
 
-	factory.get = function(id){
+	factory.get = function(id, callback){
 		var get_pokemon = $resource(pokeApiUrl + "api/v2/pokemon/:pokemonId", {pokemonId: "@pokemonId"});
 		get_pokemon.get({pokemonId: id}, function(response) {
-		console.log(response);
-			return response;
+			callback(response);
 		});
 	};
 	
 	return factory;
 });
 
-pokeApp.service('DetailServ', function(DetailFact){
-	this.detail = function(id) {
-		return DetailFact.get(id);
-	}
-});
 
-
-pokeApp.controller('PokemonList', function($scope, $log, $http, $resource, DetailServ) {
+pokeApp.controller('PokemonList', function($scope, $log, $http, $resource, DetailFact) {
 
     $scope.names = [];
 
@@ -42,14 +35,15 @@ pokeApp.controller('PokemonList', function($scope, $log, $http, $resource, Detai
     $scope.go = function (id) {
         var abilities = {};
 
-		var pokemon = DetailServ.detail(id);
-		/*$scope.info = {
-			"id": pokemon.id,
-			"nom": pokemon.name,
-			"expérience": pokemon.base_experience,
-			"hauteur": pokemon.height,
-			"poids": pokemon.weight
-		};*/
+		DetailFact.get(id, function(element){
+			$scope.info = {
+				"id": element.id,
+				"nom": element.name,
+				"expérience": element.base_experience,
+				"hauteur": element.height,
+				"poids": element.weight
+			};
+		});
 
         //var get_abilities = $resource(pokeApiUrl + "api/v2/ability/:abilityId", {abilityId: "@abilityId"});
     }

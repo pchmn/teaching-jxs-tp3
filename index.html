@@ -18,7 +18,7 @@
             <input type="text" ng-model="test">
 
             <select ng-model="id">
-                <option ng-repeat="x in names | filter : test">{{ x }}</option>
+                <option ng-repeat="(key, val) in names | filter : test" value={{key}}>{{ val }}</option>
             </select>
 
             <button type="button" class="btn btn-primary" ng-click="go(id)">Go</button>
@@ -35,6 +35,15 @@
                 </li>
             </ul>
 
+        </div>
+
+        <div ng-controller="PokemonInfos">
+			<p>Info pokemon</p>
+            <ul>
+                <li ng-repeat="(key, val) in info">
+                    {{ key }} : {{ val }}
+                </li>
+            </ul>
         </div>
 
 		<!-- Pokémon information -->

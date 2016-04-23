@@ -5,6 +5,7 @@
     <title></title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
 </head>
 <body ng-app="pokedex">
@@ -15,8 +16,8 @@
 		<!-- Search -->
 		<div ng-controller="PokemonList">
 
-            <input type="text" ng-model="test">
-
+            <input type="text" ng-model="test" placeholder="nom">
+            <input type="text" ng-model="pokemonId" placeholder="id">
             <select ng-model="id">
                 <option ng-repeat="(key, val) in names | filter : test" value={{key}}>{{ val }}</option>
             </select>
@@ -24,22 +25,12 @@
             <button type="button" class="btn btn-primary" ng-click="go(id)">Go</button>
 
             <p>Vous avez choisi : {{ id }}</p>
+            <input type="hidden" nb-model="finded">
 
-<!--            <ul>
-                <li ng-repeat="x in names | filter: test"> {{ x }}</li>
-            </ul>-->
-            <p>Info pokemon</p>
-            <ul>
-                <li ng-repeat="(key, val) in info">
-                    {{ key }} : {{ val }}
-                </li>
-            </ul>
 
         </div>
 
         <div ng-controller="PokemonInfos">
-            <input type="text" ng-model="pokemonId">
-            <button type="button" class="btn btn-primary" ng-click="go(pokemonId)">Go</button>
 			<p>Info pokemon</p>
             <ul>
                 <li ng-repeat="(key, val) in info">

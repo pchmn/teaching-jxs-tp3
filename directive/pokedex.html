@@ -1,14 +1,21 @@
-<p>Info pokemon</p>
-<ul>
-    <li ng-repeat="(key, val) in info" ng-if="key!='sprites' && key!='abilities'">
-        {{ key }} : {{ val }}
-    </li>
-</ul>
-<ul>
-	<label>Abilities : </label>
-	<li ng-repeat="(key, value) in info.abilities">
-		{{value.ability.name}}
-	</li>
-</ul>
-<img ng-src="{{ image.url }}" />
-<!-- <img ng-model="image" ng-src=""/> -->
+<div class="row">
+	<div class="col-md-4">
+		<h1>{{ info.name }}</h1>
+	</div>
+	<div class="col-md-8">
+		<img ng-src="{{ image.url }}" />
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<p><label>Id : </label>{{ info.id }}</p>
+
+		<h2>Abilities : </h2>
+		<ul>
+			<li ng-repeat="(key, value) in info.abilities">
+				{{value.ability.name}}
+			</li>
+		</ul>
+	</div>
+</div>

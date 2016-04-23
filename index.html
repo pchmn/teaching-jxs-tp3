@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Pokésir</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -11,13 +11,22 @@
 <body ng-app="pokedex">
 
 	<div class="container">
-		<h1>Pokésir</h1>
 
-		<!-- Search -->
-        <pokedex-search ng-controller="PokemonList"></pokedex-search>
+
+        <!-- Search -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <pokedex-search ng-controller="PokemonList"></pokedex-search>
+            </div>
+        </div>
+
 
         <!-- Details -->
-        <pokedex nb-controller="PokemonInfos"></pokedex>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <pokedex nb-controller="PokemonInfos"></pokedex>
+            </div>
+        </div>
 
     </div>
 <!-- Dependencies -->

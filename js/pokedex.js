@@ -86,6 +86,9 @@ pokeApp.controller('PokemonList', function($scope, Pokedex, DetailFact, myServic
 
 	Pokedex.getAll(function(element){
 		$scope.pokemons = element;
+		
+		// Supprime l'option vide
+		$scope.id = element[0].entry_number;
 	});
 
 	$scope.go = function (id) {

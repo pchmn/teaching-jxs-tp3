@@ -107,3 +107,15 @@ pokeApp.controller('PokemonInfos', function($scope, myService) {
 		}, true
 	);
 });
+
+pokeApp.directive('pokedex', function() {
+	var directive = {};
+	directive.restrict = 'E';
+	directive.templateUrl = "pokedex.html";
+
+	directive.compile = function(element, attributes) {
+	   element.css("border", "1px solid #cccccc");
+	}
+
+	return directive;
+});

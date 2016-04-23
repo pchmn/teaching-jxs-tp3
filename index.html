@@ -14,7 +14,7 @@
 		<h1>Pokésir</h1>
 
 		<!-- Search -->
-		<div ng-controller="PokemonList">
+        <div ng-controller="PokemonList">
 
             <input type="text" ng-model="test" placeholder="nom">
             <input type="text" ng-model="pokemonId" placeholder="id">
@@ -29,20 +29,7 @@
 
 
         </div>
-
-        <div ng-controller="PokemonInfos">
-			<p>Info pokemon</p>
-            <ul>
-                <li ng-repeat="(key, val) in info">
-                    {{ key }} : {{ val }}
-                </li>
-            </ul>
-        </div>
-
-		<!-- Pokémon information -->
-		<div></div>
-
-	</div>
+        <pokedex ng-controller="PokemonInfos"></pokedex>
 
     <!-- Dependencies -->
     <script src="js/jquery.min.js"></script>

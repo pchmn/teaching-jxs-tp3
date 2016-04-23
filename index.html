@@ -14,31 +14,20 @@
 		<h1>Pokésir</h1>
 
 		<!-- Search -->
-        <div ng-controller="PokemonList">
+        <pokedex-search ng-controller="PokemonList"></pokedex-search>
 
-            <input type="text" ng-model="test" placeholder="nom">
-            <input type="text" ng-model="pokemonId" placeholder="id">
-            <select ng-model="id">
-                <option ng-repeat="(key, val) in names | filter : test" value={{key}}>{{ val }}</option>
-            </select>
+        <!-- Details -->
+        <pokedex nb-controller="PokemonInfos"></pokedex>
 
-            <button type="button" class="btn btn-primary" ng-click="go(id)">Go</button>
+    </div>
+<!-- Dependencies -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-resource.min.js"></script>
 
-            <p>Vous avez choisi : {{ id }}</p>
-            <input type="hidden" nb-model="finded">
-
-
-        </div>
-        <pokedex ng-controller="PokemonInfos"></pokedex>
-
-    <!-- Dependencies -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-resource.min.js"></script>
-
-    <!-- Pokedex app -->
-    <script src="js/pokedex.js"></script>
+<!-- Pokedex app -->
+<script src="js/pokedex.js"></script>
 
 
 </body>

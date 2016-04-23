@@ -1,0 +1,7 @@
+<input type="text" ng-model="search.name" placeholder="nom">
+<input type="text" ng-model="search.entry_number" placeholder="id"><br/>
+<select ng-model="id">
+    <option ng-repeat="pokemon in pokemons | filter : search" value={{pokemon.entry_number}}>{{ pokemon.name }}</option>
+</select>
+
+<button type="button" class="btn btn-primary" ng-click="go(id)">Go</button>

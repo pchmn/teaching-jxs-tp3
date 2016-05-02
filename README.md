@@ -1,4 +1,4 @@
-# teaching-jxs-tp3 - Pokemon
+# TP Pokemon - teaching-jxs-tp3
 
 Deux directives ont été crées pour séparer les deux deux controlleurs de la page.
 

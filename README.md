@@ -1,4 +1,4 @@
-# teaching-jxs-tp3
+# teaching-jxs-tp3 - Pokemon
 
 Deux directives ont été crées pour séparer les deux deux controlleurs de la page.
 
@@ -42,5 +42,5 @@ Il possède des fonctions get, set et reset pour gérer ces données.
 ### DetailFact
 Ce service permet de récupérer des informations d'un pokémon dans l'API. Il fait appel à un callback une fois qu'il à fini sa requête.
 
-
-
+<br>
+###### Clément Goachet - Paul Chemin
